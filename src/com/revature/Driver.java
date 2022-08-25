@@ -5,8 +5,30 @@ import java.util.*;
 public class Driver {
 	public static void main(String[] args) {
 		
-		int[] m = {1,2};
-		int[] n = {3,4};
+		Scanner in = new Scanner(System.in);
+		
+		int arrayOneLength;
+		int arrayTwoLength;
+		int[] m;
+		int[] n;
+		
+		System.out.println("How long is your first array?");
+		arrayOneLength = in.nextInt();
+		m = new int[arrayOneLength];
+		System.out.println("What are the ordered elements of your first array?");
+		for(int i = 0; i < arrayOneLength; i++) {
+			m[i]=in.nextInt();
+		}
+		System.out.println("How long is your second array?");
+		arrayTwoLength = in.nextInt();
+		n = new int[arrayTwoLength];
+		System.out.println("What are the ordered elements of your second array?");
+		for(int i = 0; i < arrayTwoLength; i++) {
+			n[i]=in.nextInt();
+		}
+		
+		//int[] m = {1,2};
+		//int[] n = {3,4};
 		
 		//int[] m = {1,3};
 		//int[] n = {2};
@@ -58,12 +80,14 @@ public class Driver {
 		
 		//find median
 		
+		System.out.print("Problem 1: ");
+		
 		if (merged.length%2 == 1) System.out.println(merged[merged.length/2]);
 		else {
 			//add medians together as double
 			double medianSum = merged[merged.length/2] + merged[merged.length/2-1];
 			//divide by 2
-			System.out.println(medianSum/2);
+			System.out.println(String.format("%.5f", (medianSum/2)));
 		}
 		
 		//stretch goal: specify problem number
@@ -72,7 +96,24 @@ public class Driver {
 		
 		// ----------------------------------------------------------------------------------------------
 		
-		LinkedList<Integer>[] lists = new LinkedList[0];
+		int listArrayLength;
+		LinkedList<Integer>[] lists;
+		
+		System.out.println("How many lists are in your array?");
+		listArrayLength = in.nextInt();
+		lists = new LinkedList[listArrayLength];
+		
+		for (int i = 0; i < lists.length; i++) {
+			lists[i]=new LinkedList<Integer>();
+			System.out.println("How long is list number " + (i+1) + "?");
+			int listLength = in.nextInt();
+			System.out.println("What are the ordered elements of list number " + (i+1) + "?");
+			for (int j = 0; j < listLength; j++) {
+				lists[i].add(in.nextInt());
+			}
+		}
+		
+		//LinkedList<Integer>[] lists = new LinkedList[0];
 		
 		/*LinkedList<Integer>[] lists = new LinkedList[3];
 		
@@ -131,10 +172,14 @@ public class Driver {
 		}
 		//when all of the iterators stop returning, stop
 		//print the numbers
+		System.out.print("Problem 2: [ ");
+		
 		for(int i: mergedTwo) {
 			System.out.print(i + " ");
 		}
+		
+		System.out.println("]");
+		
+		in.close();
 	}
-	
-	
 }
