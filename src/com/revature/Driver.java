@@ -90,9 +90,9 @@ public class Driver {
 			System.out.println(String.format("%.5f", (medianSum/2)));
 		}
 		
-		//stretch goal: specify problem number
-		//stretch goal: format to expected format
-		//stretch goal: take input from command line
+		//Turn this into a GUI using swing?
+		//Validate user input
+		//Run from file
 		
 		// ----------------------------------------------------------------------------------------------
 		
